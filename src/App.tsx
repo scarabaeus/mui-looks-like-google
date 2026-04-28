@@ -18,7 +18,7 @@ export default function App() {
         <Sidebar themes={themes} activeId={activeId} onSelect={setActiveId} />
         <Box component="main" sx={{ flex: 1, overflow: 'auto' }}>
           <Box sx={{ p: 4, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Typography variant="h4" fontWeight={700}>
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
               {activeEntry.label}
             </Typography>
             <Typography variant="body2" sx={{ mt: 0.5, opacity: 0.6 }}>
