@@ -1,1 +1,7 @@
 # mui-looks-like-google
+
+If I had a nickel for each time an uninformed manager/engineer said in a meeting "if we use MUI our app will look like Google [Material Design]", I'd be a rich man. So, sadly, I needed to waste hours of my life to help them sit down and shut up.
+
+Implemented solely via MUI theme object -- no custom components.
+
+**Note:** I'm not saying these are correct theme implementations or even the "best way" to implement these themes. This is just a "stick to things you actually know about" demo to give anyone who has an uninformed opinion about [MUI](https://mui.com/material-ui).
