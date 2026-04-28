@@ -2,6 +2,7 @@ import type { Theme } from '@mui/material/styles'
 import { defaultTheme } from './default'
 import { ridiculousnessTheme } from './ridiculousness'
 import { ios1Theme } from './ios1'
+import { unstyledTheme } from './unstyled'
 
 export interface ThemeEntry {
   id: string
@@ -15,13 +16,19 @@ export const themes: ThemeEntry[] = [
     id: 'ridiculousness',
     label: 'Ridiculousness',
     theme: ridiculousnessTheme,
-    description: 'Pong buttons. Star inputs. Spiral outlines. Still just a theme.',
+    description: 'Pong buttons. Star inputs. Spiral outlines. Still just a theme. Oh so Google-y!',
   },
   {
     id: 'ios1',
     label: 'iPhone OS 1.0',
     theme: ios1Theme,
-    description: 'Wet-glass buttons, inset inputs, Helvetica Neue. Slide to unlock not included.',
+    description: 'Wet-glass buttons, inset inputs, Helvetica Neue. Slide to unlock not included. Wait! Did they not have MUI in 2007?!',
+  },
+  {
+    id: 'unstyled',
+    label: 'Unstyled HTML',
+    theme: unstyledTheme,
+    description: 'Native browser elements. Labels left-anchored. Zero opinion. Oh wait... this is MUI also.',
   },
   {
     id: 'default',

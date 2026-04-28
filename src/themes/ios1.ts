@@ -85,8 +85,8 @@ export const ios1Theme = createTheme({
           borderRadius: 10,
           border: `1px solid ${BORDER}`,
           boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.12)',
-          paddingLeft: 10,
-          paddingRight: 10,
+          paddingLeft: 12,
+          paddingRight: 12,
           transition: 'box-shadow 0.2s, border-color 0.2s',
           '&::before': { display: 'none' },
           '&::after': { display: 'none' },
@@ -96,7 +96,8 @@ export const ios1Theme = createTheme({
           },
         },
         input: {
-          padding: '10px 0',
+          // Top padding makes room for the label sitting inside the box
+          padding: '22px 0 8px',
           fontSize: 17,
           color: TEXT,
           '&::placeholder': { color: GRAY, opacity: 1 },
@@ -104,26 +105,26 @@ export const ios1Theme = createTheme({
       },
     },
 
-    // ── OUTLINED field — same inset look, border via fieldset ────────────────
+    // ── OUTLINED field — same inset look, border on root so shadow aligns ──────
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
           backgroundColor: WHITE,
           borderRadius: 10,
-          boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.1)',
-          transition: 'box-shadow 0.2s',
-          '& fieldset': {
-            borderColor: BORDER,
-            borderRadius: 10,
-            transition: 'border-color 0.2s',
-          },
-          '&:hover fieldset': { borderColor: '#AEAEB2' },
-          '&.Mui-focused fieldset': { borderColor: BLUE, borderWidth: 1 },
+          border: `1px solid ${BORDER}`,
+          boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.12)',
+          transition: 'box-shadow 0.2s, border-color 0.2s',
+          // Fieldset's top: -5px offset misaligns the inset shadow — hide it
+          '& fieldset': { display: 'none' },
+          '&:hover': { borderColor: '#AEAEB2' },
           '&.Mui-focused': {
-            boxShadow: `inset 0 2px 5px rgba(0,0,0,0.1), 0 0 0 3px ${alpha(BLUE, 0.28)}`,
+            borderColor: BLUE,
+            boxShadow: `inset 0 2px 5px rgba(0,0,0,0.12), 0 0 0 3px ${alpha(BLUE, 0.28)}`,
           },
         },
         input: {
+          // Same top padding as standard so value text clears the label
+          padding: '22px 12px 8px',
           fontSize: 17,
           color: TEXT,
           '&::placeholder': { color: GRAY, opacity: 1 },
@@ -150,8 +151,7 @@ export const ios1Theme = createTheme({
           },
         },
         input: {
-          paddingTop: 14,
-          paddingBottom: 14,
+          padding: '22px 12px 8px',
           fontSize: 17,
           color: TEXT,
           '&::placeholder': { color: GRAY, opacity: 1 },
@@ -165,7 +165,19 @@ export const ios1Theme = createTheme({
         root: {
           color: GRAY,
           fontSize: 17,
+          zIndex: 1,
           '&.Mui-focused': { color: BLUE },
+        },
+        shrink: {
+          // Standard: MUI adds 16px marginTop via `label + &`, so we add that
+          // to the desired 7px offset to land the label inside the white box.
+          transform: 'translate(12px, 23px) scale(0.75)',
+          '&.MuiInputLabel-outlined': {
+            transform: 'translate(14px, 7px) scale(0.75)',
+          },
+          '&.MuiInputLabel-filled': {
+            transform: 'translate(12px, 7px) scale(0.75)',
+          },
         },
       },
     },
