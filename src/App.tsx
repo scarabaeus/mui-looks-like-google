@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { ThemeProvider, CssBaseline } from '@mui/material'
-import { Box, Typography } from '@mui/material'
+import { Box, Link, Typography } from '@mui/material'
 import { themes } from './themes'
 import type { ThemeId } from './themes'
 import { Sidebar } from './components/Sidebar'
 import { Showcase } from './components/Showcase'
+import { About } from './components/About'
 
 function GitHubLink() {
   return (
@@ -42,29 +43,59 @@ function GitHubLink() {
 
 export default function App() {
   const [activeId, setActiveId] = useState<ThemeId>('ridiculousness')
+  const [showAbout, setShowAbout] = useState(false)
 
   const activeEntry = themes.find((t) => t.id === activeId) ?? themes[0]!
+
+  function handleSelectTheme(id: ThemeId) {
+    setActiveId(id)
+    setShowAbout(false)
+  }
 
   return (
     <>
       <GitHubLink />
       <ThemeProvider theme={activeEntry.theme}>
-      <CssBaseline />
-      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-        <Sidebar themes={themes} activeId={activeId} onSelect={setActiveId} />
-        <Box component="main" sx={{ flex: 1, overflow: 'auto' }}>
-          <Box sx={{ p: 4, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Typography variant="h4" sx={{ fontWeight: 700 }}>
-              {activeEntry.label}
-            </Typography>
-            <Typography variant="body2" sx={{ mt: 0.5, opacity: 0.6 }}>
-              {activeEntry.description}
-            </Typography>
+        <CssBaseline />
+        <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+          <Sidebar
+            themes={themes}
+            activeId={activeId}
+            showAbout={showAbout}
+            onSelect={handleSelectTheme}
+            onAbout={() => setShowAbout(true)}
+          />
+          <Box component="main" sx={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
+            {showAbout ? (
+              <About />
+            ) : (
+              <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <Box sx={{ p: 4, borderBottom: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
+                    {activeEntry.label}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mt: 0.5, opacity: 0.6 }}>
+                    {activeEntry.description}
+                  </Typography>
+                </Box>
+                <Showcase />
+                <Box sx={{ mt: 'auto', px: 4, py: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+                  <Typography variant="body2" sx={{ opacity: 0.55 }}>
+                    Built by a tired engineer who needed receipts.{' '}
+                    <Link
+                      href="https://github.com/scarabaeus/mui-looks-like-google"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source on GitHub.
+                    </Link>
+                  </Typography>
+                </Box>
+              </Box>
+            )}
           </Box>
-          <Showcase />
         </Box>
-      </Box>
-    </ThemeProvider>
+      </ThemeProvider>
     </>
   )
 }
