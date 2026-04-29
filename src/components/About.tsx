@@ -11,16 +11,17 @@ export function About() {
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 2 }}>
-        If I had a nickel for every time an uninformed manager or engineer declared
-        "if we use MUI, our app will look like Google" in a meeting, I'd retire
+        If I had a nickel for every time an uninformed manager or engineer declared{' '}
+        <strong><em>"if we use <Link href="https://mui.com/" target="_blank" rel="noopener noreferrer" color="primary">Material UI</Link>, our app will look like Google"</em></strong> in a meeting, I'd retire
         tomorrow. This is that nickel — plural.
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 4 }}>
         Every theme you see in this sidebar was built using a{' '}
         <strong>single MUI theme object</strong>. No custom components. No{' '}
-        <code>sx</code> props scattered through the codebase. No{' '}
-        <code>styled()</code> wrappers. Just <code>createTheme()</code>, a
+        <code>sx</code> or inline <code>style</code> props scattered through the codebase. No{' '}
+        <code>styled()</code> wrappers. No additional
+        CSS modules <span style={{ whiteSpace: 'nowrap' }}>(Mantine 👀)</span>. Just <code>createTheme()</code>, a
         frankly absurd amount of <code>styleOverrides</code>, and a few
         CSS keyframes for the truly unhinged parts.
       </Typography>
