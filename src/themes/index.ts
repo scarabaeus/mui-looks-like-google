@@ -35,7 +35,7 @@ export const themes: ThemeEntry[] = [
     id: 'appleHig',
     label: 'Apple HIG 2025',
     theme: appleHigTheme,
-    description: 'SF Pro, system blue, focus rings. No keynote slide needed — it just feels like macOS... or Google I guess.',
+    description: 'SF Pro, system blue, focus rings. No keynote slide needed — it just feels like macOS... or Google, I guess. :facepalm:',
   },
   {
     id: 'default',
