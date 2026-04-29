@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
-const GRAD = 'linear-gradient(135deg, #D45730 0%, #C13D68 100%)'
-const WHITE = '#FFFFFF'
+const GRAD = 'linear-gradient(135deg, #D45730 0%, #C13D68 100%)';
+const WHITE = '#FFFFFF';
 const SF = [
   '-apple-system',
   'BlinkMacSystemFont',
@@ -10,21 +10,21 @@ const SF = [
   '"Helvetica Neue"',
   'Arial',
   'sans-serif',
-].join(', ')
+].join(', ');
 
 // Dark translucent glass — gradient bleeds through
-const GLASS = 'rgba(0,0,0,0.28)'
-const GLASS_HOVER = 'rgba(0,0,0,0.20)'
-const GLASS_ACTIVE = 'rgba(0,0,0,0.38)'
-const GLASS_BORDER = 'rgba(255,255,255,0.18)'
-const GLASS_BORDER_FOCUS = 'rgba(255,255,255,0.60)'
-const GLASS_FOCUS_RING = '0 0 0 3px rgba(255,255,255,0.28)'
+const GLASS = 'rgba(0,0,0,0.28)';
+const GLASS_HOVER = 'rgba(0,0,0,0.20)';
+const GLASS_ACTIVE = 'rgba(0,0,0,0.38)';
+const GLASS_BORDER = 'rgba(255,255,255,0.18)';
+const GLASS_BORDER_FOCUS = 'rgba(255,255,255,0.60)';
+const GLASS_FOCUS_RING = '0 0 0 3px rgba(255,255,255,0.28)';
 
 // Text on the gradient background
-const LABEL = 'rgba(255,255,255,0.75)'
+const LABEL = 'rgba(255,255,255,0.75)';
 // Text inside glass fields
-const FIELD_TEXT = WHITE
-const PLACEHOLDER = 'rgba(255,255,255,0.50)'
+const FIELD_TEXT = WHITE;
+const PLACEHOLDER = 'rgba(255,255,255,0.50)';
 
 const GLASS_FIELD_STYLES = {
   background: 'rgba(0,0,0,0.22)',
@@ -33,7 +33,7 @@ const GLASS_FIELD_STYLES = {
   border: `1px solid ${GLASS_BORDER}`,
   borderRadius: 10,
   transition: 'box-shadow 0.15s, border-color 0.15s',
-}
+};
 
 export const appleHigTheme = createTheme({
   palette: {
@@ -249,4 +249,5 @@ export const appleHigTheme = createTheme({
       },
     },
   },
-})
+});
+

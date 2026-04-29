@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
 export const unstyledTheme = createTheme({
   palette: {
@@ -115,6 +115,8 @@ export const unstyledTheme = createTheme({
       defaultProps: { disableUnderline: true },
       styleOverrides: {
         root: {
+          // MUI adds `label + &: { marginTop: 16px }` which breaks the row alignment
+          marginTop: '0 !important',
           flex: 1,
           backgroundColor: '#fff',
           border: '1px solid #767676',
@@ -143,21 +145,13 @@ export const unstyledTheme = createTheme({
         root: {
           flex: 1,
           backgroundColor: '#fff',
+          // Own border so outline aligns correctly — fieldset has top:-5px which
+          // causes the focus ring to float above the visible border edge
+          border: '1px solid #767676',
           borderRadius: 2,
           fontSize: 13,
           fontFamily: 'system-ui, -apple-system, Arial, sans-serif',
-          // Hide MUI fieldset; replace with a plain border via outline trick
-          '& fieldset': {
-            borderColor: '#767676',
-            borderRadius: 2,
-            // Collapse the notch — label is not inside the border
-            '& legend': { display: 'none' },
-          },
-          '&:hover fieldset': { borderColor: '#767676' },
-          '&.Mui-focused fieldset': {
-            borderColor: '#767676',
-            borderWidth: 1,
-          },
+          '& fieldset': { display: 'none' },
           '&.Mui-focused': {
             outline: '2px solid #0060df',
             outlineOffset: 1,
@@ -223,4 +217,5 @@ export const unstyledTheme = createTheme({
       },
     },
   },
-})
+});
+
