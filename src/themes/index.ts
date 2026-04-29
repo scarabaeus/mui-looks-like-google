@@ -3,6 +3,7 @@ import { defaultTheme } from './default'
 import { ridiculousnessTheme } from './ridiculousness'
 import { ios1Theme } from './ios1'
 import { unstyledTheme } from './unstyled'
+import { appleHigTheme } from './appleHig'
 
 export interface ThemeEntry {
   id: string
@@ -29,6 +30,12 @@ export const themes: ThemeEntry[] = [
     label: 'Unstyled HTML',
     theme: unstyledTheme,
     description: 'Native browser elements. Labels left-anchored. Zero opinion. Oh wait... this is MUI also.',
+  },
+  {
+    id: 'appleHig',
+    label: 'Apple HIG 2025',
+    theme: appleHigTheme,
+    description: 'SF Pro, system blue, focus rings. No keynote slide needed — it just feels like macOS... or Google I guess.',
   },
   {
     id: 'default',
