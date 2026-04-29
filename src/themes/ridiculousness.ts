@@ -178,6 +178,7 @@ export const ridiculousnessTheme = createTheme({
             borderWidth: 3,
             borderStyle: 'dashed',
             borderRadius: 'inherit',
+            '& legend': { display: 'none' },
           },
           '&:hover fieldset': {
             borderColor: '#CE93D8',

@@ -1,15 +1,21 @@
-import { Box, Divider, Link, Typography } from '@mui/material'
-import type { ThemeEntry, ThemeId } from '../themes'
+import { Box, Divider, Link, Typography } from '@mui/material';
+import type { ThemeEntry, ThemeId } from '../themes';
 
 interface SidebarProps {
-  themes: ThemeEntry[]
-  activeId: ThemeId
-  showAbout: boolean
-  onSelect: (id: ThemeId) => void
-  onAbout: () => void
+  themes: ThemeEntry[];
+  activeId: ThemeId;
+  showAbout: boolean;
+  onSelect: (id: ThemeId) => void;
+  onAbout: () => void;
 }
 
-export function Sidebar({ themes, activeId, showAbout, onSelect, onAbout }: SidebarProps) {
+export function Sidebar({
+  themes,
+  activeId,
+  showAbout,
+  onSelect,
+  onAbout,
+}: SidebarProps) {
   return (
     <Box
       component="nav"
@@ -25,10 +31,24 @@ export function Sidebar({ themes, activeId, showAbout, onSelect, onAbout }: Side
         gap: 1,
       }}
     >
-      <Typography variant="subtitle2" sx={{ mb: 1, opacity: 0.5, textTransform: 'uppercase', letterSpacing: 1 }}>
+      <Typography
+        variant="subtitle2"
+        sx={{
+          mb: 1,
+          opacity: 0.5,
+          textTransform: 'uppercase',
+          letterSpacing: 1,
+        }}
+      >
         Themes
       </Typography>
       <Divider sx={{ mb: 1 }} />
+      <Typography
+        variant="body2"
+        sx={{ mb: 1, opacity: 0.6, fontStyle: 'italic', lineHeight: 1.4 }}
+      >
+        Turns out <Link href="https://mui.com" target="_blank" rel="noopener">MUI</Link> doesn't have to look like Google.
+      </Typography>
       {themes.map((entry) => (
         <Link
           key={entry.id}
@@ -42,8 +62,14 @@ export function Sidebar({ themes, activeId, showAbout, onSelect, onAbout }: Side
             px: 1,
             borderRadius: 1,
             fontWeight: !showAbout && activeId === entry.id ? 700 : 400,
-            color: !showAbout && activeId === entry.id ? 'primary.main' : 'text.primary',
-            backgroundColor: !showAbout && activeId === entry.id ? 'action.selected' : 'transparent',
+            color:
+              !showAbout && activeId === entry.id
+                ? 'primary.main'
+                : 'text.primary',
+            backgroundColor:
+              !showAbout && activeId === entry.id
+                ? 'action.selected'
+                : 'transparent',
             cursor: 'pointer',
             '&:hover': { backgroundColor: 'action.hover' },
           }}
@@ -75,5 +101,5 @@ export function Sidebar({ themes, activeId, showAbout, onSelect, onAbout }: Side
         </Link>
       </Box>
     </Box>
-  )
+  );
 }

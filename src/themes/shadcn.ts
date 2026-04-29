@@ -1,19 +1,20 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
 // shadcn/ui "zinc" default palette — exact CSS variable values
-const BACKGROUND = '#ffffff'
-const FOREGROUND = '#09090b'   // zinc-950
-const MUTED = '#f4f4f5'        // zinc-100
-const MUTED_FG = '#71717a'     // zinc-500
-const BORDER = '#e4e4e7'       // zinc-200
-const PRIMARY = '#18181b'      // zinc-900
-const PRIMARY_FG = '#fafafa'   // zinc-50
-const RING = '#18181b'         // zinc-900
+const BACKGROUND = '#ffffff';
+const FOREGROUND = '#09090b'; // zinc-950
+const MUTED = '#f4f4f5'; // zinc-100
+const MUTED_FG = '#71717a'; // zinc-500
+const BORDER = '#e4e4e7'; // zinc-200
+const PRIMARY = '#18181b'; // zinc-900
+const PRIMARY_FG = '#fafafa'; // zinc-50
+const RING = '#18181b'; // zinc-900
 
-const INTER = '"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif'
+const INTER =
+  '"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif';
 
 // focus-visible:ring-2 ring-ring ring-offset-2 — 2px white gap, 4px dark ring
-const FOCUS_RING = `0 0 0 2px ${BACKGROUND}, 0 0 0 4px ${RING}`
+const FOCUS_RING = `0 0 0 2px ${BACKGROUND}, 0 0 0 4px ${RING}`;
 
 export const shadcnTheme = createTheme({
   palette: {
@@ -69,7 +70,11 @@ export const shadcnTheme = createTheme({
           color: FOREGROUND,
           border: `1px solid ${BORDER}`,
           boxShadow: 'none',
-          '&:hover': { backgroundColor: MUTED, borderColor: BORDER, boxShadow: 'none' },
+          '&:hover': {
+            backgroundColor: MUTED,
+            borderColor: BORDER,
+            boxShadow: 'none',
+          },
           '&:active': { backgroundColor: '#e4e4e7' },
         },
       },
@@ -189,7 +194,11 @@ export const shadcnTheme = createTheme({
           '&::before': { display: 'none' },
           '&::after': { display: 'none' },
           '&:hover': { backgroundColor: BACKGROUND },
-          '&.Mui-focused': { backgroundColor: BACKGROUND, outline: 'none', boxShadow: FOCUS_RING },
+          '&.Mui-focused': {
+            backgroundColor: BACKGROUND,
+            outline: 'none',
+            boxShadow: FOCUS_RING,
+          },
         },
         input: {
           padding: '0 12px',
@@ -240,4 +249,4 @@ export const shadcnTheme = createTheme({
       },
     },
   },
-})
+});
