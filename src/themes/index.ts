@@ -67,3 +67,4 @@ export const themes: ThemeEntry[] = [
 ];
 
 export type ThemeId = (typeof themes)[number]['id'];
+

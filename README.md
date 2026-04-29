@@ -7,3 +7,4 @@ If I had a nickel for each time an uninformed manager/engineer said in a meeting
 Implemented solely via an MUI theme object — no custom components.
 
 **Note:** I'm not saying these are correct theme implementations or even the "best way" to implement these components. This is just a "stick to things you actually know about" demo to present to anyone who has an uninformed opinion about [MUI](https://mui.com/material-ui) theming.
+
