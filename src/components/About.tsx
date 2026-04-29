@@ -11,8 +11,8 @@ export function About() {
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 2 }}>
-        If I had a nickel for every time an uninformed manager or engineer
-        declared{' '}
+        If I had a nickel for every time an uninformed manager or unhinged
+        engineer declared{' '}
         <strong>
           <em>
             "if we use{' '}
@@ -32,13 +32,14 @@ export function About() {
 
       <Typography variant="body1" sx={{ mb: 4 }}>
         Every theme you see in this sidebar was built using a{' '}
-        <strong>single MUI theme object</strong>. No custom components. No{' '}
-        <code>sx</code> or inline <code>style</code> props scattered through the
-        codebase. No <code>styled()</code> wrappers. No additional CSS modules{' '}
+        <strong>single, hot-swappable MUI theme object</strong> alone. No custom
+        components. No inline/one-off <code>sx</code>, <code>style</code>, or{' '}
+        <code>className</code> props scattered through the codebase. No{' '}
+        <code>styled()</code> wrappers. No additional CSS modules to support
+        pseudo-selectors or deeply nested elements{' '}
         <span style={{ whiteSpace: 'nowrap' }}>(Mantine 👀)</span>. Just{' '}
-        <code>createTheme()</code>, a frankly absurd amount of{' '}
-        <code>styleOverrides</code>, and a few CSS keyframes for the truly
-        unhinged parts.
+        <code>createTheme()</code> and, frankly, an absurd amount of{' '}
+        <code>styleOverrides</code> within it.
       </Typography>
 
       <Divider sx={{ mb: 4 }} />
@@ -50,7 +51,7 @@ export function About() {
         The form on every theme page is identical — same JSX, same{' '}
         <code>TextField</code> variants, same <code>Button</code> components.
         The only thing that changes is the theme passed to{' '}
-        <code>{'<ThemeProvider>'}</code> and, hopefully, a few uninitiated
+        <code>{'<ThemeProvider>'}</code> — and, hopefully, a few uninitiated
         minds.
       </Typography>
       <Box component="ul" sx={{ pl: 3, mb: 4 }}>
@@ -68,6 +69,12 @@ export function About() {
           </Box>
         ))}
       </Box>
+      <Typography variant="body1" sx={{ mb: 4 }}>
+        Also — yes, the showcase is exactly five components. MUI has dozens.
+        Theming all of them would have taken time and energy I simply don't
+        have. The point was to prove it's possible, not to build a second job
+        for myself. The receipts are in. We move on.
+      </Typography>
 
       <Divider sx={{ mb: 4 }} />
 
@@ -80,7 +87,7 @@ export function About() {
         copy-pasted into your codebase. The Ridiculousness theme in particular
         should <em>never</em> be anywhere near production. You know who you are.
       </Typography>
-      <Typography variant="body1" sx={{ mb: 4 }}>
+      <Typography variant="body1" sx={{ mb: 2 }}>
         The point isn't "here's how to build an iOS theme." The point is "MUI's
         theming system is powerful enough that you could, and it would still
         just be a theme."
@@ -101,4 +108,3 @@ export function About() {
     </Box>
   );
 }
-
