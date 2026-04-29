@@ -4,10 +4,12 @@ import type { ThemeEntry, ThemeId } from '../themes'
 interface SidebarProps {
   themes: ThemeEntry[]
   activeId: ThemeId
+  showAbout: boolean
   onSelect: (id: ThemeId) => void
+  onAbout: () => void
 }
 
-export function Sidebar({ themes, activeId, onSelect }: SidebarProps) {
+export function Sidebar({ themes, activeId, showAbout, onSelect, onAbout }: SidebarProps) {
   return (
     <Box
       component="nav"
@@ -39,9 +41,9 @@ export function Sidebar({ themes, activeId, onSelect }: SidebarProps) {
             py: 0.75,
             px: 1,
             borderRadius: 1,
-            fontWeight: activeId === entry.id ? 700 : 400,
-            color: activeId === entry.id ? 'primary.main' : 'text.primary',
-            backgroundColor: activeId === entry.id ? 'action.selected' : 'transparent',
+            fontWeight: !showAbout && activeId === entry.id ? 700 : 400,
+            color: !showAbout && activeId === entry.id ? 'primary.main' : 'text.primary',
+            backgroundColor: !showAbout && activeId === entry.id ? 'action.selected' : 'transparent',
             cursor: 'pointer',
             '&:hover': { backgroundColor: 'action.hover' },
           }}
@@ -49,6 +51,29 @@ export function Sidebar({ themes, activeId, onSelect }: SidebarProps) {
           {entry.label}
         </Link>
       ))}
+
+      <Box sx={{ mt: 'auto' }}>
+        <Divider sx={{ my: 2 }} />
+        <Link
+          component="button"
+          underline="hover"
+          onClick={onAbout}
+          sx={{
+            display: 'block',
+            textAlign: 'left',
+            py: 0.75,
+            px: 1,
+            borderRadius: 1,
+            fontWeight: showAbout ? 700 : 400,
+            color: showAbout ? 'primary.main' : 'text.primary',
+            backgroundColor: showAbout ? 'action.selected' : 'transparent',
+            cursor: 'pointer',
+            '&:hover': { backgroundColor: 'action.hover' },
+          }}
+        >
+          About
+        </Link>
+      </Box>
     </Box>
   )
 }
