@@ -55,7 +55,7 @@ export const themes: ThemeEntry[] = [
     id: 'default',
     label: 'Default',
     theme: defaultTheme,
-    description: 'The "it looks like Google" one. In this one case, I agree it looks like Google.',
+    description: 'The "it looks like Google" one — the out-of-the-box, unstyled MUI theme. In this one case, I agree that MUI looks like Google.',
   },
 ]
 
