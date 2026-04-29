@@ -1,13 +1,14 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
-const BG = '#C0C0C0'      // the silver
-const WHITE = '#FFFFFF'
-const BLACK = '#000000'
-const DARK = '#808080'    // shadow side
-const LIGHT = '#DFDFDF'   // highlight side
-const NAVY = '#000080'    // title bar blue / selection
-const TEXT = '#000000'
-const FONT = '"MS Sans Serif", "Microsoft Sans Serif", system-ui, Arial, sans-serif'
+const BG = '#C0C0C0'; // the silver
+const WHITE = '#FFFFFF';
+const BLACK = '#000000';
+const DARK = '#808080'; // shadow side
+const LIGHT = '#DFDFDF'; // highlight side
+const NAVY = '#000080'; // title bar blue / selection
+const TEXT = '#000000';
+const FONT =
+  '"MS Sans Serif", "Microsoft Sans Serif", system-ui, Arial, sans-serif';
 
 // Raised 3D bevel — white top/left outer, dark grey bottom/right outer, inner bevel via inset shadow
 const bevelRaised = {
@@ -16,7 +17,7 @@ const bevelRaised = {
   borderRight: `2px solid ${DARK}`,
   borderBottom: `2px solid ${DARK}`,
   boxShadow: `inset -1px -1px 0 ${BLACK}, inset 1px 1px 0 ${LIGHT}`,
-}
+};
 
 // Pressed bevel — inverted
 const bevelPressed = {
@@ -25,7 +26,7 @@ const bevelPressed = {
   borderRight: `2px solid ${WHITE}`,
   borderBottom: `2px solid ${WHITE}`,
   boxShadow: `inset 1px 1px 0 ${BLACK}`,
-}
+};
 
 // Sunken bevel — for text inputs
 const bevelSunken = {
@@ -34,7 +35,7 @@ const bevelSunken = {
   borderRight: `2px solid ${WHITE}`,
   borderBottom: `2px solid ${WHITE}`,
   boxShadow: `inset 1px 1px 0 ${BLACK}, inset -1px -1px 0 ${LIGHT}`,
-}
+};
 
 export const win95Theme = createTheme({
   palette: {
@@ -252,4 +253,4 @@ export const win95Theme = createTheme({
       },
     },
   },
-})
+});

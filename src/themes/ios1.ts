@@ -1,11 +1,11 @@
-import { createTheme, alpha } from '@mui/material/styles'
+import { createTheme, alpha } from '@mui/material/styles';
 
-const BLUE = '#1C78E4'
-const BG = '#EFEFF4'
-const WHITE = '#FFFFFF'
-const GRAY = '#8E8E93'
-const BORDER = '#C8C7CC'
-const TEXT = '#1C1C1E'
+const BLUE = '#1C78E4';
+const BG = '#EFEFF4';
+const WHITE = '#FFFFFF';
+const GRAY = '#8E8E93';
+const BORDER = '#C8C7CC';
+const TEXT = '#1C1C1E';
 
 export const ios1Theme = createTheme({
   palette: {
@@ -42,11 +42,13 @@ export const ios1Theme = createTheme({
           position: 'relative',
           overflow: 'hidden',
           // Two-stop gradient: pale blue top half, saturated blue bottom half
-          background: 'linear-gradient(to bottom, #5AAAF5 0%, #2468E4 49%, #0C52C4 51%, #1048C0 100%)',
+          background:
+            'linear-gradient(to bottom, #5AAAF5 0%, #2468E4 49%, #0C52C4 51%, #1048C0 100%)',
           color: WHITE,
           textShadow: '0 -1px 0 rgba(0,0,0,0.35)',
           border: '1px solid #0840A0',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.2)',
+          boxShadow:
+            '0 2px 4px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.2)',
           // Wet-glass gloss on top half
           '&::before': {
             content: '""',
@@ -55,12 +57,14 @@ export const ios1Theme = createTheme({
             left: 0,
             right: 0,
             height: '50%',
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.07) 100%)',
+            background:
+              'linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.07) 100%)',
             borderRadius: '12px 12px 0 0',
             pointerEvents: 'none',
           },
           '&:hover': {
-            background: 'linear-gradient(to bottom, #68B8F8 0%, #3478F0 49%, #1060D0 51%, #1850C8 100%)',
+            background:
+              'linear-gradient(to bottom, #68B8F8 0%, #3478F0 49%, #1060D0 51%, #1850C8 100%)',
             boxShadow: '0 3px 8px rgba(0,0,0,0.4)',
           },
           '&:active': {
@@ -216,4 +220,4 @@ export const ios1Theme = createTheme({
       },
     },
   },
-})
+});

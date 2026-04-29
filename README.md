@@ -2,7 +2,7 @@
 
 **[Live Demo](https://scarabaeus.github.io/mui-looks-like-google/)**
 
-If I had a nickel for each time an uninformed manager/engineer said in a meeting "if we use MUI our app will look like Google [Material Design]", I'd be a rich man. So, sadly, I needed to waste hours of my life to help them sit down and shut the f**k up. Hopefully this will help you too.
+If I had a nickel for each time an uninformed manager/engineer said in a meeting "if we use MUI our app will look like Google [Material Design]", I'd be a rich man. So, sadly, I needed to waste hours of my life to help them sit down and shut the f\*\*k up. Hopefully this will help you too.
 
 Implemented solely via MUI theme object -- no custom components.
 
