@@ -43,6 +43,12 @@ export function Sidebar({
         Themes
       </Typography>
       <Divider sx={{ mb: 1 }} />
+      <Typography
+        variant="body2"
+        sx={{ mb: 1, opacity: 0.6, fontStyle: 'italic', lineHeight: 1.4 }}
+      >
+        Turns out <Link href="https://mui.com" target="_blank" rel="noopener">MUI</Link> doesn't have to look like Google.
+      </Typography>
       {themes.map((entry) => (
         <Link
           key={entry.id}
