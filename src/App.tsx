@@ -73,7 +73,7 @@ export default function App() {
             onClick={() => setMobileOpen(true)}
             aria-label="open navigation"
             sx={{
-              display: { md: 'none' },
+              display: { xs: mobileOpen ? 'none' : 'flex', md: 'none' },
               position: 'fixed',
               top: 8,
               left: 8,
@@ -100,6 +100,7 @@ export default function App() {
               overflow: 'auto',
               display: 'flex',
               flexDirection: 'column',
+              pt: { xs: '1rem', md: 0 },
             }}
           >
             {showAbout ? (
