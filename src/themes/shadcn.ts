@@ -228,6 +228,9 @@ export const shadcnTheme = createTheme({
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
         label: {
           fontFamily: INTER,
           fontSize: 14,

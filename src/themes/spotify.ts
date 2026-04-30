@@ -205,6 +205,9 @@ export const spotifyTheme = createTheme({
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
         label: {
           fontFamily: FONT,
           fontSize: 14,
