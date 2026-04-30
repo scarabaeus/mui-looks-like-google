@@ -63,7 +63,7 @@ export const win95Theme = createTheme({
             right: 16,
             width: 220,
             height: 188,
-            backgroundImage: 'url("/clippy.png")',
+            backgroundImage: `url("${import.meta.env.BASE_URL}clippy.png")`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom right',
