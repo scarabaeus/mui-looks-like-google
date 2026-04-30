@@ -53,7 +53,24 @@ export const win95Theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        body: { backgroundColor: BG },
+        body: {
+          backgroundColor: BG,
+          '&::after': {
+            content: '""',
+            display: 'block',
+            position: 'fixed',
+            bottom: 16,
+            right: 16,
+            width: 220,
+            height: 188,
+            backgroundImage: 'url("/clippy.png")',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'bottom right',
+            pointerEvents: 'none',
+            zIndex: 9999,
+          },
+        },
       },
     },
 
