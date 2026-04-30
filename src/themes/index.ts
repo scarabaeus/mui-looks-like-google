@@ -20,7 +20,7 @@ export const themes: ThemeEntry[] = [
     label: 'Ridiculousness',
     theme: ridiculousnessTheme,
     description:
-      'Pong buttons. Star inputs. Spiral outlines. Still just a theme that looks EXACTLY like Google!',
+      'Pong buttons. Star inputs. You betcha checkboxes. Still just a theme that looks EXACTLY like Google!',
   },
   {
     id: 'ios1',
@@ -38,7 +38,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'appleHig',
-    label: 'Apple HIG 2025',
+    label: 'Apple HIG',
     theme: appleHigTheme,
     description:
       'SF Pro, system blue, focus rings. No keynote slide needed — it just feels like macOS... or Google, I guess. :facepalm:',
@@ -67,4 +67,3 @@ export const themes: ThemeEntry[] = [
 ];
 
 export type ThemeId = (typeof themes)[number]['id'];
-

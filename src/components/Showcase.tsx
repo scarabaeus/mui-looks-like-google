@@ -33,7 +33,7 @@ export function Showcase() {
           defaultValue="steve@example.com"
         />
         <FormControlLabel
-          control={<Checkbox />}
+          control={<Checkbox defaultChecked />}
           label="I agree to the terms and conditions"
         />
         <Box sx={{ display: 'flex', gap: 2 }}>
@@ -46,4 +46,3 @@ export function Showcase() {
     </Box>
   );
 }
-

@@ -11,8 +11,7 @@ export function About() {
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 2 }}>
-        If I had a nickel for every time an uninformed manager or unhinged
-        engineer declared{' '}
+        If I had a nickel for every time someone declared{' '}
         <strong>
           <em>
             "if we use{' '}
@@ -27,7 +26,7 @@ export function About() {
             , our app will look like Google"
           </em>
         </strong>{' '}
-        in a meeting, I'd retire tomorrow. This is that nickel — plural.
+        in a meeting, I'd retire tomorrow.
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 4 }}>
@@ -36,10 +35,9 @@ export function About() {
         components. No inline/one-off <code>sx</code>, <code>style</code>, or{' '}
         <code>className</code> props scattered through the codebase. No{' '}
         <code>styled()</code> wrappers. No additional CSS modules to support
-        pseudo-selectors or deeply nested elements{' '}
-        <span style={{ whiteSpace: 'nowrap' }}>(Mantine 👀)</span>. Just{' '}
-        <code>createTheme()</code> and, frankly, an absurd amount of{' '}
-        <code>styleOverrides</code> within it.
+        pseudo-selectors, media/container queries, or deeply nested elements as
+        an after thought. Just <code>createTheme()</code> and, frankly, an
+        absurd amount of <code>styleOverrides</code> within it.
       </Typography>
 
       <Divider sx={{ mb: 4 }} />
