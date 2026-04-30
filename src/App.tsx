@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline, IconButton } from '@mui/material';
 import { Box, Link, Typography } from '@mui/material';
 import { themes } from './themes';
 import type { ThemeId } from './themes';
@@ -54,6 +54,7 @@ function GitHubLink() {
 export default function App() {
   const [activeId, setActiveId] = useState<ThemeId>('ridiculousness');
   const [showAbout, setShowAbout] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const activeEntry = themes.find((t) => t.id === activeId) ?? themes[0]!;
 
@@ -68,12 +69,29 @@ export default function App() {
       <ThemeProvider theme={activeEntry.theme}>
         <CssBaseline />
         <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+          <IconButton
+            onClick={() => setMobileOpen(true)}
+            aria-label="open navigation"
+            sx={{
+              display: { md: 'none' },
+              position: 'fixed',
+              top: 8,
+              left: 8,
+              zIndex: (t) => t.zIndex.drawer + 1,
+            }}
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+            </svg>
+          </IconButton>
           <Sidebar
             themes={themes}
             activeId={activeId}
             showAbout={showAbout}
             onSelect={handleSelectTheme}
             onAbout={() => setShowAbout(true)}
+            mobileOpen={mobileOpen}
+            onMobileClose={() => setMobileOpen(false)}
           />
           <Box
             component="main"
