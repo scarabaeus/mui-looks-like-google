@@ -243,18 +243,54 @@ export const win95Theme = createTheme({
         root: {
           padding: 2,
           borderRadius: 0,
+          position: 'relative',
           color: TEXT,
-          '& .MuiSvgIcon-root': { fontSize: 14 },
+
+          // MUI SVG is invisible — just holds the clickable size
+          '& .MuiSvgIcon-root': { opacity: 0, fontSize: 18 },
+
+          // Sunken bevel box — always visible
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: 17,
+            height: 17,
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: WHITE,
+            ...bevelSunken,
+          },
+
+          // Check mark — appears when checked
+          '&::after': {
+            content: '"✔"',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            fontSize: 9,
+            lineHeight: 1,
+            color: BLACK,
+            opacity: 0,
+            pointerEvents: 'none',
+          },
+
           '&.Mui-checked': { color: TEXT },
+          '&.Mui-checked::after': { opacity: 1 },
         },
       },
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
         label: {
           fontSize: 11,
           fontFamily: FONT,
           color: TEXT,
+          marginLeft: 2,
         },
       },
     },

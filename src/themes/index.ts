@@ -6,6 +6,7 @@ import { unstyledTheme } from './unstyled';
 import { appleHigTheme } from './appleHig';
 import { win95Theme } from './win95';
 import { shadcnTheme } from './shadcn';
+import { spotifyTheme } from './spotify';
 
 export interface ThemeEntry {
   id: string;
@@ -27,7 +28,7 @@ export const themes: ThemeEntry[] = [
     label: 'iPhone OS 1.0',
     theme: ios1Theme,
     description:
-      'Wet-glass buttons, inset inputs, Helvetica Neue. Slide to unlock not included. (I guess they had MUI in 2007.)',
+      'Wet-glass buttons, inset inputs, Helvetica Neue. I guess MUI existed in 2007.',
   },
   {
     id: 'unstyled',
@@ -48,7 +49,14 @@ export const themes: ThemeEntry[] = [
     label: 'Windows 95',
     theme: win95Theme,
     description:
-      'Silver. Sunken inputs. Raised buttons. All via theme. Please set your wallpaper to teal and prepare to feast your eyes on Google 95.',
+      'Silver. Sunken inputs. Raised buttons. Please set your wallpaper to teal and prepare to feast your eyes on Google 95.',
+  },
+  {
+    id: 'spotify',
+    label: 'Spotify',
+    theme: spotifyTheme,
+    description:
+      'Dark. Green. Pill buttons. No monthly subscription or Google Pay required.',
   },
   {
     id: 'shadcn',
