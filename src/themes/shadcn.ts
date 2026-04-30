@@ -11,7 +11,7 @@ const PRIMARY_FG = '#fafafa'; // zinc-50
 const RING = '#18181b'; // zinc-900
 
 const INTER =
-  '"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif';
+  '"Inter Variable", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif';
 
 // focus-visible:ring-2 ring-ring ring-offset-2 — 2px white gap, 4px dark ring
 const FOCUS_RING = `0 0 0 2px ${BACKGROUND}, 0 0 0 4px ${RING}`;

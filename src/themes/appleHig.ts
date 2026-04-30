@@ -8,6 +8,8 @@ const SF = [
   '"SF Pro Text"',
   '"SF Pro Display"',
   '"Helvetica Neue"',
+  '"Inter Variable"',
+  'Inter',
   'Arial',
   'sans-serif',
 ].join(', ');
