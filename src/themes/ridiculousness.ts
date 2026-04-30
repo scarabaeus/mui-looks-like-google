@@ -461,6 +461,14 @@ export const ridiculousnessTheme = createTheme({
       },
     },
 
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
+      },
+    },
+
     // ── SWITCH looks like a Pong score board toggle ───────────────────────────
     MuiSwitch: {
       styleOverrides: {

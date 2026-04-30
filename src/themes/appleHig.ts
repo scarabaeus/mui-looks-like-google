@@ -228,6 +228,9 @@ export const appleHigTheme = createTheme({
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
         label: {
           fontSize: 14,
           fontFamily: SF,

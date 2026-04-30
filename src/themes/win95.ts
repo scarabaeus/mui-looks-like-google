@@ -251,6 +251,9 @@ export const win95Theme = createTheme({
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+        },
         label: {
           fontSize: 11,
           fontFamily: FONT,
