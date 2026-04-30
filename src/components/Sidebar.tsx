@@ -1,5 +1,15 @@
-import { Box, Divider, Link, Typography } from '@mui/material';
+import {
+  Box,
+  Divider,
+  Drawer,
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import type { ThemeEntry, ThemeId } from '../themes';
+
+const DRAWER_WIDTH = 240;
 
 interface SidebarProps {
   themes: ThemeEntry[];
@@ -7,6 +17,8 @@ interface SidebarProps {
   showAbout: boolean;
   onSelect: (id: ThemeId) => void;
   onAbout: () => void;
+  mobileOpen: boolean;
+  onMobileClose: () => void;
 }
 
 export function Sidebar({
@@ -15,20 +27,31 @@ export function Sidebar({
   showAbout,
   onSelect,
   onAbout,
+  mobileOpen,
+  onMobileClose,
 }: SidebarProps) {
-  return (
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  function handleSelect(id: ThemeId) {
+    onSelect(id);
+    if (isMobile) onMobileClose();
+  }
+
+  function handleAbout() {
+    onAbout();
+    if (isMobile) onMobileClose();
+  }
+
+  const contents = (
     <Box
       component="nav"
       sx={{
-        width: 240,
-        flexShrink: 0,
-        borderRight: '1px solid',
-        borderColor: 'divider',
-        minHeight: '100vh',
         p: 3,
         display: 'flex',
         flexDirection: 'column',
         gap: 1,
+        minHeight: '100%',
       }}
     >
       <Typography
@@ -47,14 +70,18 @@ export function Sidebar({
         variant="body2"
         sx={{ mb: 1, opacity: 0.6, fontStyle: 'italic', lineHeight: 1.4 }}
       >
-        Turns out <Link href="https://mui.com" target="_blank" rel="noopener">MUI</Link> doesn't have to look like Google.
+        Turns out{' '}
+        <Link href="https://mui.com" target="_blank" rel="noopener">
+          MUI
+        </Link>{' '}
+        doesn't have to look like Google.
       </Typography>
       {themes.map((entry) => (
         <Link
           key={entry.id}
           component="button"
           underline="hover"
-          onClick={() => onSelect(entry.id as ThemeId)}
+          onClick={() => handleSelect(entry.id as ThemeId)}
           sx={{
             display: 'block',
             textAlign: 'left',
@@ -83,7 +110,7 @@ export function Sidebar({
         <Link
           component="button"
           underline="hover"
-          onClick={onAbout}
+          onClick={handleAbout}
           sx={{
             display: 'block',
             textAlign: 'left',
@@ -102,5 +129,25 @@ export function Sidebar({
       </Box>
     </Box>
   );
-}
 
+  return (
+    <Drawer
+      variant={isMobile ? 'temporary' : 'permanent'}
+      open={isMobile ? mobileOpen : true}
+      onClose={onMobileClose}
+      ModalProps={{ keepMounted: true }}
+      sx={{
+        width: { md: DRAWER_WIDTH },
+        flexShrink: 0,
+        '& .MuiDrawer-paper': {
+          width: DRAWER_WIDTH,
+          boxSizing: 'border-box',
+          borderRight: '1px solid',
+          borderColor: 'divider',
+        },
+      }}
+    >
+      {contents}
+    </Drawer>
+  );
+}

@@ -239,6 +239,17 @@ export const appleHigTheme = createTheme({
       },
     },
 
+    // ── DRAWER: more opaque than cards so nav text is legible on mobile ───────
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          background: 'rgba(0,0,0,0.82)',
+          backdropFilter: 'blur(24px) saturate(1.4)',
+          WebkitBackdropFilter: 'blur(24px) saturate(1.4)',
+        },
+      },
+    },
+
     // ── CARD ─────────────────────────────────────────────────────────────────
     MuiCard: {
       styleOverrides: {
