@@ -194,17 +194,66 @@ export const ios1Theme = createTheme({
       },
     },
 
-    // ── CHECKBOX ─────────────────────────────────────────────────────────────
+    // ── CHECKBOX: styled as an iPhone OS toggle switch ───────────────────────
     MuiCheckbox: {
+      defaultProps: { disableRipple: true },
       styleOverrides: {
         root: {
-          color: BORDER,
-          '&.Mui-checked': { color: BLUE },
+          width: 51,
+          height: 31,
+          padding: 0,
+          flexShrink: 0,
+          position: 'relative',
+          borderRadius: 16,
+
+          // Hide the MUI SVG — sizing only
+          '& .MuiSvgIcon-root': { display: 'none' },
+
+          // Track
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 16,
+            background: `linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), #c7c7cc`,
+            boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.22)',
+            transition: 'background 0.28s',
+          },
+
+          // Thumb
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 2,
+            left: 2,
+            width: 27,
+            height: 27,
+            borderRadius: '50%',
+            backgroundColor: WHITE,
+            boxShadow: '0 2px 5px rgba(0,0,0,0.35), 0 0 0 0.5px rgba(0,0,0,0.08)',
+            transition: 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          },
+
+          // Checked — track turns blue, thumb slides right
+          '&.Mui-checked::before': {
+            background: `linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), ${BLUE}`,
+          },
+          '&.Mui-checked::after': {
+            transform: 'translateX(20px)',
+          },
+
+          '&.Mui-focusVisible::before': {
+            boxShadow: `inset 0 1px 3px rgba(0,0,0,0.22), 0 0 0 3px ${alpha(BLUE, 0.28)}`,
+          },
         },
       },
     },
     MuiFormControlLabel: {
       styleOverrides: {
+        root: {
+          marginLeft: 0,
+          gap: '1rem',
+        },
         label: { fontSize: 17, color: TEXT },
       },
     },
