@@ -1,0 +1,16 @@
+{
+  "name": "MUI Doesn't Look Like Google",
+  "short_name": "MUI Themes",
+  "description": "8 MUI themes built exclusively with createTheme() styleOverrides. No sx props.",
+  "start_url": "/mui-looks-like-google/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "icons": [
+    {
+      "src": "/mui-looks-like-google/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scarabaeus.github.io/mui-looks-like-google/sitemap.xml
