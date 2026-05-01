@@ -1,14 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 
-const BLACK        = '#121212';              // page background
-const SURFACE      = '#242424';              // inputs / elevated surfaces
-const GREEN        = '#1DB954';              // the green
-const GREEN_HOVER  = '#1ED760';              // hover state
-const WHITE        = '#FFFFFF';
-const SUBDUED      = '#A7A7A7';              // secondary text / placeholder
-const BORDER       = 'rgba(255,255,255,0.2)';
+const BLACK = '#121212'; // page background
+const SURFACE = '#242424'; // inputs / elevated surfaces
+const GREEN = '#1DB954'; // the green
+const GREEN_HOVER = '#1ED760'; // hover state
+const WHITE = '#FFFFFF';
+const SUBDUED = '#A7A7A7'; // secondary text / placeholder
+const BORDER = 'rgba(255,255,255,0.2)';
 const BORDER_HOVER = 'rgba(255,255,255,0.6)';
-const FONT         = '"Inter Variable", Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
+const FONT =
+  '"Inter Variable", Inter, "Helvetica Neue", Helvetica, Arial, sans-serif';
 
 export const spotifyTheme = createTheme({
   palette: {
@@ -126,8 +127,8 @@ export const spotifyTheme = createTheme({
           paddingRight: 16,
           transition: 'border-color 0.15s',
           '&::before': { display: 'none' },
-          '&::after':  { display: 'none' },
-          '&:hover':       { borderColor: BORDER_HOVER },
+          '&::after': { display: 'none' },
+          '&:hover': { borderColor: BORDER_HOVER },
           '&.Mui-focused': { borderColor: WHITE },
         },
         input: {
@@ -150,7 +151,7 @@ export const spotifyTheme = createTheme({
           border: `1px solid ${BORDER}`,
           transition: 'border-color 0.15s',
           '& fieldset': { display: 'none' },
-          '&:hover':       { borderColor: BORDER_HOVER },
+          '&:hover': { borderColor: BORDER_HOVER },
           '&.Mui-focused': { borderColor: WHITE },
         },
         input: {
@@ -174,8 +175,8 @@ export const spotifyTheme = createTheme({
           border: `1px solid ${BORDER}`,
           transition: 'border-color 0.15s',
           '&::before': { display: 'none' },
-          '&::after':  { display: 'none' },
-          '&:hover':       { backgroundColor: SURFACE, borderColor: BORDER_HOVER },
+          '&::after': { display: 'none' },
+          '&:hover': { backgroundColor: SURFACE, borderColor: BORDER_HOVER },
           '&.Mui-focused': { backgroundColor: SURFACE, borderColor: WHITE },
         },
         input: {
