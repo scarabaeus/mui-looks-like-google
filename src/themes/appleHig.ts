@@ -214,15 +214,59 @@ export const appleHigTheme = createTheme({
       },
     },
 
-    // ── CHECKBOX ─────────────────────────────────────────────────────────────
+    // ── CHECKBOX: styled as an Apple HIG toggle switch ───────────────────────
     MuiCheckbox: {
       defaultProps: { disableRipple: true },
       styleOverrides: {
         root: {
-          padding: 4,
-          color: LABEL,
-          borderRadius: 4,
-          '&.Mui-checked': { color: WHITE },
+          width: 51,
+          height: 31,
+          padding: 0,
+          flexShrink: 0,
+          position: 'relative',
+          borderRadius: 16,
+
+          '& .MuiSvgIcon-root': { display: 'none' },
+
+          // Track — dark glass when off, matches text fields
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 16,
+            background: 'rgba(0,0,0,0.22)',
+            backdropFilter: 'blur(20px) saturate(1.4)',
+            WebkitBackdropFilter: 'blur(20px) saturate(1.4)',
+            border: `1px solid ${GLASS_BORDER}`,
+            transition: 'background 0.28s, border-color 0.28s',
+          },
+
+          // Thumb
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 2,
+            left: 2,
+            width: 27,
+            height: 27,
+            borderRadius: '50%',
+            backgroundColor: WHITE,
+            boxShadow: '0 2px 5px rgba(0,0,0,0.35), 0 0 0 0.5px rgba(0,0,0,0.08)',
+            transition: 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          },
+
+          // Checked — bright white glass track, thumb slides right
+          '&.Mui-checked::before': {
+            background: 'rgba(255,255,255,0.55)',
+            borderColor: 'rgba(255,255,255,0.7)',
+          },
+          '&.Mui-checked::after': {
+            transform: 'translateX(20px)',
+          },
+
+          '&.Mui-focusVisible::before': {
+            boxShadow: GLASS_FOCUS_RING,
+          },
         },
       },
     },
@@ -230,6 +274,7 @@ export const appleHigTheme = createTheme({
       styleOverrides: {
         root: {
           marginLeft: 0,
+          gap: '1rem',
         },
         label: {
           fontSize: 14,
