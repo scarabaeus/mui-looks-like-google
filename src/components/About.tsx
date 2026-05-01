@@ -67,6 +67,34 @@ export function About() {
           </Box>
         ))}
       </Box>
+
+      <Box
+        sx={{
+          mb: 4,
+          pl: 2,
+          borderLeft: '3px solid',
+          borderColor: 'primary.main',
+        }}
+      >
+        <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.75 }}>
+          Interesting note
+        </Typography>
+        <Typography variant="body1">
+          The iPhone OS 1.0 theme checkbox is actually still a{' '}
+          <code>MuiCheckbox</code> — not a <code>MuiSwitch</code>. MUI ships a
+          perfectly good toggle component. I didn't use it. Instead, the
+          checkbox was restyled{' '}
+          <em>
+            entirely within <code>styleOverrides</code>
+          </em>{' '}
+          using pseudo-elements to fake the track and thumb, and a{' '}
+          <code>translateX</code> transition to slide the thumb on check. Same
+          component, same behavior, zero JSX changes. I didn't <em>have</em> to
+          do it, you don't <em>need</em> to do it, but I did it to prove a
+          point.
+        </Typography>
+      </Box>
+
       <Typography variant="body1" sx={{ mb: 4 }}>
         Also — yes, the showcase is exactly five components. MUI has dozens.
         Theming all of them would have taken time and energy I simply don't
