@@ -11,7 +11,7 @@ export function About() {
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 2 }}>
-        If I had a nickel for every time someone declared{' '}
+        If I had a nickel for every time someone said{' '}
         <strong>
           <em>
             "if we use{' '}
@@ -35,9 +35,9 @@ export function About() {
         components. No inline/one-off <code>sx</code>, <code>style</code>, or{' '}
         <code>className</code> props scattered through the codebase. No{' '}
         <code>styled()</code> wrappers. No additional CSS modules to support
-        pseudo-selectors, media/container queries, or deeply nested elements as
-        an after thought. Just <code>createTheme()</code> and, frankly, an
-        absurd amount of <code>styleOverrides</code> within it.
+        pseudo-selectors, media/container queries, or deeply nested elements —
+        as an after thought. Just <code>createTheme()</code> and, frankly, an
+        absurd amount of <code>styleOverrides</code> pushed through it.
       </Typography>
 
       <Divider sx={{ mb: 4 }} />
@@ -90,17 +90,17 @@ export function About() {
           using pseudo-elements to fake the track and thumb, and a{' '}
           <code>translateX</code> transition to slide the thumb on check. They
           look different from each other — one glossy gray, one dark glass — but
-          the JSX is identical across both themes. Same component, same
-          behavior, zero JSX changes. I didn't <em>have</em> to do it, you
+          the JSX is still identical across <em>all themes</em>. Same component,
+          same behavior, zero JSX changes. I didn't <em>have</em> to do it, you
           don't <em>need</em> to do it, but I did it to prove a point.
         </Typography>
       </Box>
 
       <Typography variant="body1" sx={{ mb: 4 }}>
         Also — yes, the showcase is exactly five components. MUI has dozens.
-        Theming all of them would have taken time and energy I simply don't
-        have. The point was to prove it's possible, not to build a second job
-        for myself. The receipts are in. We move on.
+        Theming all of them, across <em>eight themes</em>, would have taken time
+        and energy I simply don't have. The point was to prove it's possible,
+        not to build a second job for myself. The receipts are in. We move on.
       </Typography>
 
       <Divider sx={{ mb: 4 }} />
@@ -112,7 +112,7 @@ export function About() {
         These aren't pixel-perfect, production-ready implementations. They're
         proof-of-concept themes designed to demonstrate range, not to be
         copy-pasted into your codebase. The Ridiculousness theme in particular
-        should <em>never</em> be anywhere near production. You know who you are.
+        should <em>never</em> be anywhere near production.
       </Typography>
       <Typography variant="body1" sx={{ mb: 2 }}>
         The point isn't "here's how to build an iOS theme." The point is "MUI's
