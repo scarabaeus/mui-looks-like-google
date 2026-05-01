@@ -554,6 +554,41 @@ export const ridiculousnessTheme = createTheme({
               ${alpha(PONG_WHITE, 0.04)} 40px
             )
           `,
+
+          // ── MARQUEE LIGHT BULBS: chase yellow down the sidebar nav ──────────
+          '@keyframes bulbFlash': {
+            '0%, 8%, 100%': { color: PONG_WHITE, textShadow: 'none' },
+            '4%': {
+              color: '#FFFF00',
+              textShadow:
+                '0 0 6px #FFFF00, 0 0 14px #FFFF00, 0 0 28px rgba(255,255,0,0.8)',
+            },
+          },
+
+          // 8 theme buttons are direct children of <nav>
+          'nav > button': {
+            animationName: 'bulbFlash',
+            animationDuration: '1080ms',
+            animationTimingFunction: 'linear',
+            animationIterationCount: 'infinite',
+          },
+          'nav > button:nth-of-type(1)': { animationDelay: '0ms' },
+          'nav > button:nth-of-type(2)': { animationDelay: '120ms' },
+          'nav > button:nth-of-type(3)': { animationDelay: '240ms' },
+          'nav > button:nth-of-type(4)': { animationDelay: '360ms' },
+          'nav > button:nth-of-type(5)': { animationDelay: '480ms' },
+          'nav > button:nth-of-type(6)': { animationDelay: '600ms' },
+          'nav > button:nth-of-type(7)': { animationDelay: '720ms' },
+          'nav > button:nth-of-type(8)': { animationDelay: '840ms' },
+
+          // About button is nested one div deep inside nav
+          'nav > div > button': {
+            animationName: 'bulbFlash',
+            animationDuration: '1080ms',
+            animationTimingFunction: 'linear',
+            animationIterationCount: 'infinite',
+            animationDelay: '960ms',
+          },
         },
       },
     },
