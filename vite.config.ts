@@ -7,4 +7,3 @@ export default defineConfig({
   // Local dev stays at / so the dev server doesn't need a path prefix.
   base: process.env.NODE_ENV === 'production' ? '/mui-looks-like-google/' : '/',
 });
-

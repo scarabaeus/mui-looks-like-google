@@ -266,4 +266,3 @@ export const appleHigTheme = createTheme({
     },
   },
 });
-
