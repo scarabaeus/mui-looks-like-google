@@ -80,18 +80,19 @@ export function About() {
           Interesting note
         </Typography>
         <Typography variant="body1">
-          The iPhone OS 1.0 theme checkbox is actually still a{' '}
-          <code>MuiCheckbox</code> — not a <code>MuiSwitch</code>. MUI ships a
-          perfectly good toggle component. I didn't use it. Instead, the
-          checkbox was restyled{' '}
+          The iPhone OS 1.0 and Apple HIG theme checkboxes are actually still{' '}
+          <code>MuiCheckbox</code> — not <code>MuiSwitch</code>. MUI ships a
+          perfectly good toggle component. I didn't use it. Instead, both
+          checkboxes were restyled{' '}
           <em>
             entirely within <code>styleOverrides</code>
           </em>{' '}
           using pseudo-elements to fake the track and thumb, and a{' '}
-          <code>translateX</code> transition to slide the thumb on check. Same
-          component, same behavior, zero JSX changes. I didn't <em>have</em> to
-          do it, you don't <em>need</em> to do it, but I did it to prove a
-          point.
+          <code>translateX</code> transition to slide the thumb on check. They
+          look different from each other — one glossy gray, one dark glass — but
+          the JSX is identical across both themes. Same component, same
+          behavior, zero JSX changes. I didn't <em>have</em> to do it, you
+          don't <em>need</em> to do it, but I did it to prove a point.
         </Typography>
       </Box>
 
