@@ -10,6 +10,7 @@ import { spotifyTheme } from './spotify';
 
 export interface ThemeEntry {
   id: string;
+  title: string;
   label: string;
   theme: Theme;
   description: string;
@@ -18,6 +19,7 @@ export interface ThemeEntry {
 export const themes: ThemeEntry[] = [
   {
     id: 'ridiculousness',
+    title: 'Geocities Ridiculousness Theme',
     label: 'Ridiculousness',
     theme: ridiculousnessTheme,
     description:
@@ -25,6 +27,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'ios1',
+    title: 'iPhone OS 1.0 Theme',
     label: 'iPhone OS 1.0',
     theme: ios1Theme,
     description:
@@ -32,6 +35,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'unstyled',
+    title: 'Unstyled HTML Theme',
     label: 'Unstyled HTML',
     theme: unstyledTheme,
     description:
@@ -39,6 +43,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'appleHig',
+    title: 'Apple HIG Theme',
     label: 'Apple HIG',
     theme: appleHigTheme,
     description:
@@ -46,6 +51,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'win95',
+    title: 'Windows 95 Theme',
     label: 'Windows 95',
     theme: win95Theme,
     description:
@@ -53,6 +59,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'spotify',
+    title: 'Spotify Theme',
     label: 'Spotify',
     theme: spotifyTheme,
     description:
@@ -60,6 +67,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'shadcn',
+    title: 'shadcn/ui Theme',
     label: 'shadcn/ui',
     theme: shadcnTheme,
     description:
@@ -67,6 +75,7 @@ export const themes: ThemeEntry[] = [
   },
   {
     id: 'default',
+    title: 'Default Theme',
     label: 'Default',
     theme: defaultTheme,
     description:
