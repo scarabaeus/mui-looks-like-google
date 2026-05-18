@@ -1,6 +1,11 @@
 import { Box, Divider, Link, Typography } from '@mui/material';
+import type { ThemeId } from '../themes';
 
-export function About() {
+interface AboutProps {
+  onSelectTheme: (id: ThemeId) => void;
+}
+
+export function About({ onSelectTheme }: AboutProps) {
   return (
     <Box sx={{ p: 4, maxWidth: 660 }}>
       <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
@@ -29,7 +34,7 @@ export function About() {
         in a meeting, I'd retire tomorrow.
       </Typography>
 
-      <Typography variant="body1" sx={{ mb: 4 }}>
+      <Typography variant="body1" sx={{ mb: 2 }}>
         Every theme you see in this sidebar was built using a{' '}
         <strong>single, hot-swappable MUI theme object</strong> alone. No custom
         components. No inline/one-off <code>sx</code>, <code>style</code>, or{' '}
@@ -38,6 +43,37 @@ export function About() {
         pseudo-selectors, media/container queries, or deeply nested elements —
         as an after thought. Just <code>createTheme()</code> and, frankly, an
         absurd amount of <code>styleOverrides</code> pushed through it.
+      </Typography>
+
+      <Typography variant="body1" sx={{ mb: 4 }}>
+        {(
+          [
+            ['It', 'ridiculousness'],
+            ['does', 'ios1'],
+            ['not', 'unstyled'],
+            ['have', 'appleHig'],
+            ['to', 'win95'],
+            ['look', 'spotify'],
+            ['like', 'shadcn'],
+            ['Google', 'default'],
+          ] as [string, ThemeId][]
+        ).map(([word, id], i, arr) => (
+          <span key={id}>
+            <Link
+              component="a"
+              onClick={() => onSelectTheme(id)}
+              title={id}
+              sx={{
+                verticalAlign: 'baseline',
+                fontSize: 'inherit',
+                cursor: 'pointer',
+              }}
+            >
+              {word}
+            </Link>
+            {i < arr.length - 1 ? ' ' : '.'}
+          </span>
+        ))}
       </Typography>
 
       <Divider sx={{ mb: 4 }} />

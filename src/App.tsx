@@ -73,7 +73,7 @@ export default function App() {
           }}
         >
           {showAbout ? (
-            <About />
+            <About onSelectTheme={handleSelectTheme} />
           ) : (
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
               <Box
@@ -84,7 +84,7 @@ export default function App() {
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                  {activeEntry.label}
+                  {activeEntry.title}
                 </Typography>
                 <Typography variant="body2" sx={{ mt: 0.5, opacity: 0.6 }}>
                   {activeEntry.description}
